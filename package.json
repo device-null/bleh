@@ -7,8 +7,6 @@
   "main": "public/main.js",
   "homepage": "./",
   "dependencies": {
-    "@skidding/react-codemirror": "^1.0.0",
-    "codemirror": "^5.29.0",
     "electron-is-dev": "^0.3.0",
     "install": "^0.10.1",
     "lodash.assign": "^4.2.0",
@@ -42,7 +40,7 @@
     "wait-on": "^2.0.2"
   },
   "build": {
-    "appId": "com.mook",
+    "appId": "com.bleh",
     "files": [
       "build/**/*",
       "node_modules/**/*"

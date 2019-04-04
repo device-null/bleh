@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import SplitPane from 'react-split-pane';
 import assign from 'lodash.assign';
-import Editor from './editor.js';
 import Request from 'request';
 import {
     Collapse,
@@ -18,7 +17,8 @@ import {
     Button
 } from 'reactstrap';
 import LoginPage from './components/LoginPage.js'
-import {UserContext} from './components/User.js'
+
+import PropTypes from 'prop-types';
 
 import logo from './logo.svg';
 import './App.css';
@@ -101,15 +101,12 @@ class App extends Component {
   }
 
   render() {
-    const {user} = this.props;
 	  if(!this.state.loggedIn) {
 		  return (
       <div className="App">
-        <UserContext.Provider value={user}>
           <div className="view-pane">
             <LoginPage />
           </div>
-          </UserContext.Provider>
       </div>
     );
 	  }
@@ -117,15 +114,19 @@ class App extends Component {
       <div className="App">
         <SplitPane split="vertical" size={this.state.splitPaneSize}>
           <div className="editor-pane">
-            <Editor className="editor" value={this.state.markdownSrc} onChange={this.onMarkdownChange}/>
+            1
           </div>
           <div className="view-pane">
-
+            2
           </div>
         </SplitPane>
       </div>
     );
   }
+}
+
+LoginPage.contextTypes = {
+  user: PropTypes.object
 }
 
 export default App;
